@@ -2,12 +2,12 @@ package $package$
 
 import _root_.android.app.Activity
 import _root_.android.os.Bundle
+import _root_.android.view.Window
 
-class $main_activity$ extends Activity with TypedActivity {
-  override def onCreate(bundle: Bundle) {
-    super.onCreate(bundle)
-    setContentView(R.layout.main)
-
-    findView(TR.textview).setText("hello, world!")
+class $main_activity$ extends Activity {
+  override def onCreate(icicle: Bundle) {
+    super.onCreate(icicle)
+    requestWindowFeature(Window.FEATURE_NO_TITLE)
+    setContentView(new $main_activity$View(this))
   }
 }
